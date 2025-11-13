@@ -57,7 +57,7 @@ body {
 }
 
 .navigation-item {
-    margin: 0 17px;
+    margin: 5px 17px;
 }
 
 .navigation-item a {
@@ -65,6 +65,7 @@ body {
     text-decoration: none;
     align-items: center;
     padding: 13px 15px;
+    border-radius: 5px;
 }
 
 .navigation-item a span {
@@ -79,9 +80,9 @@ body {
 }
 
 .feedback {
-    display: block;
+    display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 17px 17px;
 }
@@ -90,40 +91,32 @@ body {
     width: 214px;
     height: 176px;
     border: 1px solid #f7f7f7;
+    overflow: visible;
 }
 
 .feedback-container:hover {
-    border: 1px solid #467df2;
+    border-color: #467df2;
     border-radius: 5px;
 }
 
-.feedback-image a{
-    display: inline-block;
-    margin: 13px 6px 0px 12px;
-}
-
-.feedback-right {
-    display: inline-block;
-    width: 136px;
-    font-size: 14px;
-    color: #4f4e4f;
+.feedback-container svg {
+    float: left;
+    padding: 13px 6px 7px 12px;
 }
 
 .feedback-text {
-    display: inline-block;
     width: 192px;
+    clear: right;
     font-size: 14px;
     color: #4f4e4f;
-    margin: 0px 12px 13px 12px;
+    padding: 14px 12px;
 }
 
 .feedback-text a {
     text-decoration: none;
-    margin: 0;
 }
 
-.feedback-blue {
-    display: inline-block;
+span {
     color: #0042eb;
 }
 
@@ -135,8 +128,13 @@ body {
 
 .header {
     background: #ffffff;
+    max-width: 1670px;
+}
+
+.side {
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
 }
 
 .menu {
@@ -168,31 +166,39 @@ body {
     margin-top: 8px;
 }
 
-.menu-list a {
-    font-size: 14px;
-    color: #858796;
-    text-decoration: none;
-}
-
 .list-one a:hover,
 .menu-list a:hover {
     color: #3d63d2;
 }
 
 .menu-drop {
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     opacity: 0;
-    bottom: -20px;
+    top: -200px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.menu-drop-one {
+    width: 77px;
+    padding: 30px 53px 15px 20px;
+}
+
+.menu-drop-two {
+    padding: 0px 27px 30px 20px;
 }
 
 .menu-list:hover .menu-drop {
     opacity: 1;
-    transition: 0.3s;
+    text-align: center;
+    top: 25px;
 }
 
 .menu-drop li {
+    position: relative;
     list-style: none;
-    width: 102px;
     font-size: 14px;
     color: #686464;
     cursor: pointer;
@@ -202,13 +208,19 @@ body {
     color: #3d63d2;
 }
 
+.search-container {
+    display: flex;
+    position: relative;
+    padding-top: 16px;
+    justify-content: space-between;
+}
+
 .header-search-button {
     display: flex;
     position: relative;
-    padding-left: 780px;
 }
 
-.search-container {
+.search-container-form {
     position: relative;
     width: 373px;
     height: 40px;
@@ -235,8 +247,13 @@ body {
 }
 
 .side-none {
+    display: flex;
     position: relative;
-    padding: 12px 40px;
+    padding: 0 60px;
+}
+
+.side-none svg {
+    margin-left: 40px;
 }
 
 .side-none a:hover path {
@@ -248,6 +265,11 @@ body {
     width: 83px;
     height: 40px;
     background: #467df2;
+    font-family: Nunito, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    border-color: transparent;
 }
 
 .button:hover {
@@ -276,17 +298,21 @@ h1 {
     padding: 40px 76px 93px 75px;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -20px;
+    gap: 40px;
 }
 
 .main-items {
     display: flex;
     position: relative;
-    margin: 0 15px 20px 15px;
-    box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.15);
     background: #ffffff;
     border-radius: 10px;
     width: 349px;
     height: 367px;
+}
+
+.main-items:hover {
+    box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.15);
 }
 
 .main-item {
@@ -303,17 +329,15 @@ h1 {
 
 .main-item-text {
     font-size: 14px;
-    line-height: 100%;
     color: #4f4e4f;
     display: flex;
     position: absolute;
     border-radius: 5px;
-    width: 115px;
-    height: 22px;
     background: rgba(247, 247, 247, 0.8);
     top: 12px;
     left: 12px;
     align-items: center;
+    padding: 4px 10px;
 }
 
 .main-text {
@@ -352,23 +376,37 @@ h1 {
     padding: 0 27px 20px 27px;
 }
 
+.main-icon {
+    cursor: pointer;
+}
+
+.main-icon a:hover path{
+    fill: #467df2;
+}
+
+.main-icon a:hover ellipse {
+    fill: #467df2;
+}
+
 .tehnical {
     transform: rotate(-90deg);
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 186px;
-    height: 39px;
-    right: 35px;
+    height: 49px;
+    right: -75px;
     top: 370px;
     border-radius: 10px 10px 0 0;
     background: #467df2;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.6s all;
 }
 
 .tehnical:hover {
     background: #2f54a3;
+    right: -65px;
 }
 
 .tehnical-text {
