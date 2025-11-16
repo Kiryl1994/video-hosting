@@ -134,14 +134,14 @@ span {
 .side {
     display: flex;
     justify-content: space-between;
-    padding-right: 40px;
+    padding: 0 40px;
 }
 
 .menu {
     display: flex;
     position: relative;
     list-style: none;
-    padding: 16px 60px 14px 40px;
+    align-items: center;
 }
 
 .list {
@@ -155,15 +155,28 @@ span {
     font-size: 14px;
     color: #858796;
     text-decoration: none;
-    padding-left: 60px;
-    margin-top: 8px;
+    margin-left: 60px;
 }
 
 .menu-list {
     display: flex;
     position: relative;
-    padding-left: 40px;
-    margin-top: 8px;
+    margin-left: 40px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #858796;
+}
+
+.menu-list svg {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.menu-list a:hover path {
+    fill: #467DF2;
 }
 
 .list-one a:hover,
@@ -193,7 +206,7 @@ span {
 .menu-list:hover .menu-drop {
     opacity: 1;
     text-align: center;
-    top: 25px;
+    top: 20px;
 }
 
 .menu-drop li {
@@ -211,8 +224,9 @@ span {
 .search-container {
     display: flex;
     position: relative;
-    padding-top: 16px;
+    padding: 16px 0;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header-search-button {
@@ -222,11 +236,10 @@ span {
 
 .search-container-form {
     position: relative;
-    width: 373px;
     height: 40px;
 }
 
-.search-container svg {
+.search-container-form svg {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -250,10 +263,6 @@ span {
     display: flex;
     position: relative;
     padding: 0 60px;
-}
-
-.side-none svg {
-    margin-left: 40px;
 }
 
 .side-none a:hover path {
@@ -413,3 +422,4 @@ h1 {
     font-size: 14px;
     color: #ffffff;
 }
+
